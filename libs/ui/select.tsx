@@ -50,7 +50,7 @@ export const SelectField = <T extends Key>({
           {(option) => (
             <ListBoxItem
               id={option.value}
-              className="cursor-pointer px-3 py-2 text-[14px] font-normal text-card-foreground data-focused:bg-accent data-focused:text-accent-foreground"
+              className="cursor-pointer px-3 py-2 text-sm font-normal text-card-foreground data-focused:bg-accent data-focused:text-accent-foreground"
             >
               {option.label}
             </ListBoxItem>

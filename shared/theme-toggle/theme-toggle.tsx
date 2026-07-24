@@ -41,7 +41,11 @@ export const ThemeToggle = () => {
           "focus-visible:ring-2 focus-visible:ring-ring",
         )}
       >
-        {mounted ? <ActiveIcon className="size-5" /> : <span className="size-5" />}
+        {mounted ? (
+          <ActiveIcon className="size-5" />
+        ) : (
+          <span className="size-5" />
+        )}
       </AriaButton>
       <Popover className="w-40 rounded-md border border-border bg-card shadow-md">
         <Menu
@@ -58,7 +62,7 @@ export const ThemeToggle = () => {
             <MenuItem
               key={value}
               id={value}
-              className="flex cursor-pointer items-center gap-2 rounded-sm px-3 py-2 text-[14px] font-normal text-card-foreground data-focused:bg-accent data-focused:text-accent-foreground"
+              className="flex cursor-pointer items-center gap-2 rounded-sm px-3 py-2 text-sm font-normal text-card-foreground data-focused:bg-accent data-focused:text-accent-foreground"
             >
               <Icon className="size-4" />
               {label}

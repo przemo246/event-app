@@ -48,7 +48,7 @@ export const DatePickerField = ({
         <span className="-my-3 flex shrink-0 items-center self-stretch border-r border-border bg-background py-3 pr-3 text-sm text-muted-foreground">
           {prefix}
         </span>
-        <DateInput className="flex flex-1">
+        <DateInput className="flex flex-1 text-sm">
           {(segment) => (
             <DateSegment
               segment={segment}
@@ -67,7 +67,7 @@ export const DatePickerField = ({
       ) : null}
       <Popover className="rounded-md border border-border bg-card p-3 shadow-md">
         <Dialog>
-          <Calendar>
+          <Calendar className="text-sm">
             <header className="mb-2 flex items-center justify-between">
               <Button slot="previous" className="text-card-foreground">
                 ‹
