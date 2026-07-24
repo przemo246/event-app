@@ -28,6 +28,9 @@
   --color-card: oklch(100% 0 0);
   --color-card-foreground: oklch(20% 0 0);
 
+  --color-footer: oklch(24% 0 0);
+  --color-footer-foreground: oklch(98% 0 0);
+
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;

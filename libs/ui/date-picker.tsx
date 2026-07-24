@@ -45,7 +45,7 @@ export const DatePickerField = ({
     >
       <Label className="sr-only">{label}</Label>
       <Group className="flex items-center gap-2 rounded-md border border-border bg-background px-4 py-3 focus-within:ring-2 focus-within:ring-ring">
-        <span className="-my-3 flex shrink-0 items-center self-stretch border-r border-border bg-white py-3 pr-3 text-sm text-muted-foreground">
+        <span className="-my-3 flex shrink-0 items-center self-stretch border-r border-border bg-background py-3 pr-3 text-sm text-muted-foreground">
           {prefix}
         </span>
         <DateInput className="flex flex-1">

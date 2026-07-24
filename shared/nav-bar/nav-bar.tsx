@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/libs/ui/button";
+import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
 
 const NAV_LINKS = [
   { href: "/search", label: "Wydarzenia" },
@@ -30,6 +31,7 @@ export const NavBar = () => {
         </nav>
 
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <ButtonLink href="/login">Zaloguj się</ButtonLink>
           <ButtonLink href="/add-event" variant="ghost" className="h-10">
             Dodaj wydarzenie

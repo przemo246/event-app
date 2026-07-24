@@ -3,6 +3,7 @@ import { Sora } from "next/font/google";
 import { LocaleProvider } from "@/shared/locale-provider/locale-provider";
 import { NavBar } from "@/shared/nav-bar/nav-bar";
 import { SiteFooter } from "@/shared/site-footer/site-footer";
+import { ThemeProvider } from "@/shared/theme-provider/theme-provider";
 import "../core/style/index.css";
 
 const sora = Sora({
@@ -27,13 +28,15 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html lang="pl" className={sora.variable}>
+    <html lang="pl" className={sora.variable} suppressHydrationWarning>
       <body>
-        <LocaleProvider>
-          <NavBar />
-          {children}
-          <SiteFooter />
-        </LocaleProvider>
+        <ThemeProvider>
+          <LocaleProvider>
+            <NavBar />
+            {children}
+            <SiteFooter />
+          </LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
