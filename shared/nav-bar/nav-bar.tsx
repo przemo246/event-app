@@ -34,7 +34,11 @@ export const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <ButtonLink href="/account" variant="ghost" className="h-10 text-sm">
+          <ButtonLink
+            href="/account"
+            variant="ghost"
+            className="h-10 text-sm px-3"
+          >
             <User className="size-5" />
             Moje konto
           </ButtonLink>
