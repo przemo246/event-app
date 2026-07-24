@@ -2,7 +2,10 @@
 
 import type { ComponentProps } from "react";
 import Link from "next/link";
-import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
+import {
+  Button as AriaButton,
+  type ButtonProps as AriaButtonProps,
+} from "react-aria-components";
 
 import { cn } from "@/libs/react-kit/cn";
 
@@ -10,7 +13,7 @@ import { cn } from "@/libs/react-kit/cn";
  * Public Props
  * ============================================================================= */
 
-export type ButtonVariant = "solid" | "ghost";
+export type ButtonVariant = "solid" | "ghost" | "outline";
 export type ButtonLinkVariant = ButtonVariant | "underline";
 
 export type ButtonProps = Omit<AriaButtonProps, "className"> & {
@@ -33,13 +36,15 @@ export const buttonVariants = (
   return cn(
     "inline-flex items-center justify-center gap-1.5",
     "min-h-10 rounded-md px-5.5 py-2.5",
-    "text-[15px] font-bold",
+    "text-[15px] font-semibold",
     "transition-colors duration-150",
     "outline-none focus-visible:ring-2 focus-visible:ring-ring",
     "disabled:opacity-50",
-    variant === "ghost"
+    variant === "outline"
       ? "border-2 border-accent bg-transparent text-accent hover:bg-accent/10"
-      : "border border-transparent bg-accent text-accent-foreground hover:opacity-90",
+      : variant === "ghost"
+        ? "border-0 bg-transparent text-foreground hover:bg-foreground/10"
+        : "border border-transparent bg-accent text-accent-foreground hover:opacity-90",
     className,
   );
 };
@@ -67,7 +72,9 @@ export const Button = ({
   className,
   ...props
 }: ButtonProps) => {
-  return <AriaButton className={buttonVariants(variant, className)} {...props} />;
+  return (
+    <AriaButton className={buttonVariants(variant, className)} {...props} />
+  );
 };
 
 /* =============================================================================

@@ -17,9 +17,9 @@ export const SearchSubmitButton = ({
     <Button
       onPress={onPress}
       isDisabled={isDisabled}
-      className="w-full self-end py-3"
+      className="w-full self-end font-bold"
     >
-      <Search className="size-4" />
+      <Search className="size-5" />
       Wyszukaj
     </Button>
   );

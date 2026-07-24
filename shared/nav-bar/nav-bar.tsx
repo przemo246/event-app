@@ -1,3 +1,5 @@
+import { User } from "lucide-react";
+
 import { ButtonLink } from "@/libs/ui/button";
 import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
 
@@ -32,8 +34,15 @@ export const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <ButtonLink href="/login">Zaloguj się</ButtonLink>
-          <ButtonLink href="/add-event" variant="ghost" className="h-10">
+          <ButtonLink href="/account" variant="ghost" className="h-10 text-sm">
+            <User className="size-5" />
+            Moje konto
+          </ButtonLink>
+          <ButtonLink
+            href="/add-event"
+            variant="outline"
+            className="h-10 font-bold"
+          >
             Dodaj wydarzenie
           </ButtonLink>
         </div>

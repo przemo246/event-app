@@ -3,15 +3,8 @@
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import {
-  Menu,
-  MenuItem,
-  MenuTrigger,
-  Popover,
-  Button as AriaButton,
-} from "react-aria-components";
-
-import { cn } from "@/libs/react-kit/cn";
+import { Menu, MenuItem, MenuTrigger, Popover } from "react-aria-components";
+import { Button } from "@/libs/ui/button";
 
 const THEME_OPTIONS = [
   { value: "light", label: "Jasny", icon: Sun },
@@ -33,20 +26,13 @@ export const ThemeToggle = () => {
 
   return (
     <MenuTrigger>
-      <AriaButton
-        aria-label="Zmień motyw"
-        className={cn(
-          "inline-flex size-10 items-center justify-center rounded-md",
-          "text-foreground outline-none transition-colors hover:bg-secondary",
-          "focus-visible:ring-2 focus-visible:ring-ring",
-        )}
-      >
+      <Button aria-label="Zmień motyw" variant="ghost" className="size-10 p-0">
         {mounted ? (
           <ActiveIcon className="size-5" />
         ) : (
           <span className="size-5" />
         )}
-      </AriaButton>
+      </Button>
       <Popover className="w-40 rounded-md border border-border bg-card shadow-md">
         <Menu
           className="p-1 outline-none"
