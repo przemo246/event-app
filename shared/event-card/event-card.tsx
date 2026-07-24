@@ -1,5 +1,4 @@
 import { CalendarDays, MapPin, PartyPopper } from "lucide-react";
-import Link from "next/link";
 
 type EventCardProps = {
   title: string;
