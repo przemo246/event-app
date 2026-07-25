@@ -56,7 +56,7 @@ export const DatePickerField = ({
             />
           )}
         </DateInput>
-        <Button className="text-muted-foreground">
+        <Button aria-label="Otwórz kalendarz" className="text-muted-foreground">
           <ChevronDown className="size-4" />
         </Button>
       </Group>
