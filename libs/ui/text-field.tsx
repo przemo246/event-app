@@ -11,6 +11,9 @@ export type TextFieldProps = {
   onChange: (value: string) => void;
   placeholder?: string;
   icon?: ReactNode;
+  endAdornment?: ReactNode;
+  type?: "text" | "email" | "password";
+  showLabel?: boolean;
   className?: string;
 };
 
@@ -20,22 +23,29 @@ export const TextField = ({
   onChange,
   placeholder,
   icon,
+  endAdornment,
+  type = "text",
+  showLabel = false,
   className,
 }: TextFieldProps) => {
   return (
     <AriaTextField
+      type={type}
       value={value}
       onChange={onChange}
       className={cn("flex flex-col gap-1", className)}
     >
-      <Label className="sr-only">{label}</Label>
-      {icon ? (
+      <Label className={showLabel ? "text-sm font-medium text-foreground" : "sr-only"}>
+        {label}
+      </Label>
+      {icon || endAdornment ? (
         <div className="flex items-center gap-2 rounded-md border border-border bg-background px-4 py-3 focus-within:ring-2 focus-within:ring-ring">
           {icon}
           <Input
             placeholder={placeholder}
             className="w-full text-sm text-foreground placeholder:text-muted-foreground outline-none"
           />
+          {endAdornment}
         </div>
       ) : (
         <Input

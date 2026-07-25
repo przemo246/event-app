@@ -1,13 +1,22 @@
 import { User } from "lucide-react";
+import { Suspense } from "react";
 
 import { ButtonLink } from "@/libs/ui/button";
 import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
+import { AccountLink } from "./account-link";
 
 const NAV_LINKS = [
   { href: "/search", label: "Wydarzenia" },
   { href: "/#categories", label: "Kategorie" },
   { href: "/#cities", label: "Miasta" },
 ];
+
+const AccountLinkFallback = () => (
+  <ButtonLink href="/auth/login" variant="ghost" className="h-10 text-sm px-3">
+    <User className="size-5" />
+    Moje konto
+  </ButtonLink>
+);
 
 export const NavBar = () => {
   return (
@@ -34,14 +43,9 @@ export const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <ButtonLink
-            href="/account"
-            variant="ghost"
-            className="h-10 text-sm px-3"
-          >
-            <User className="size-5" />
-            Moje konto
-          </ButtonLink>
+          <Suspense fallback={<AccountLinkFallback />}>
+            <AccountLink />
+          </Suspense>
           <ButtonLink
             href="/add-event"
             variant="outline"
