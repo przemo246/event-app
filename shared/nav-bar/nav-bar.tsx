@@ -1,9 +1,12 @@
-import { User } from "lucide-react";
 import { Suspense } from "react";
 
 import { ButtonLink } from "@/libs/ui/button";
 import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
-import { AccountLink } from "./account-link";
+import {
+  UserMenu,
+  UserMenuFallback,
+} from "@/shared/user-menu/user-menu";
+import { NavBarHeader } from "@/shared/nav-bar/nav-bar-header";
 
 const NAV_LINKS = [
   { href: "/search", label: "Wydarzenia" },
@@ -11,16 +14,9 @@ const NAV_LINKS = [
   { href: "/#cities", label: "Miasta" },
 ];
 
-const AccountLinkFallback = () => (
-  <ButtonLink href="/auth/login" variant="ghost" className="h-10 text-sm px-3">
-    <User className="size-5" />
-    Moje konto
-  </ButtonLink>
-);
-
 export const NavBar = () => {
   return (
-    <header className="bg-background">
+    <NavBarHeader>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
         <ButtonLink
           href="/"
@@ -43,18 +39,11 @@ export const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Suspense fallback={<AccountLinkFallback />}>
-            <AccountLink />
+          <Suspense fallback={<UserMenuFallback />}>
+            <UserMenu />
           </Suspense>
-          <ButtonLink
-            href="/add-event"
-            variant="outline"
-            className="h-10 font-bold"
-          >
-            Dodaj wydarzenie
-          </ButtonLink>
         </div>
       </div>
-    </header>
+    </NavBarHeader>
   );
 };
