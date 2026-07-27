@@ -1,5 +1,5 @@
-import { ACCOUNT_PATH } from "../configuration/constraints";
+import { LANDING_PATH } from "../configuration/constraints";
 
-export const goToAccount = () => {
-  window.location.assign(ACCOUNT_PATH);
+export const goToLanding = () => {
+  window.location.assign(LANDING_PATH);
 };
