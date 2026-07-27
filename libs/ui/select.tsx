@@ -22,22 +22,22 @@ export type SelectFieldOption<T extends Key> = {
 export type SelectFieldProps<T extends Key> = {
   label: string;
   options: SelectFieldOption<T>[];
-  selectedKey: T;
-  onSelectionChange: (key: T) => void;
+  value: T;
+  onChange: (value: T) => void;
   className?: string;
 };
 
 export const SelectField = <T extends Key>({
   label,
   options,
-  selectedKey,
-  onSelectionChange,
+  value,
+  onChange,
   className,
 }: SelectFieldProps<T>) => {
   return (
     <AriaSelect
-      selectedKey={selectedKey}
-      onSelectionChange={(key) => onSelectionChange(key as T)}
+      value={value}
+      onChange={(key) => onChange(key as T)}
       className={cn("flex flex-col gap-1", className)}
     >
       <Label className="sr-only">{label}</Label>
