@@ -19,8 +19,8 @@ export const CategoryField = ({ value, onChange }: CategoryFieldProps) => {
     <SelectField
       label="Kategoria"
       options={OPTIONS}
-      selectedKey={value ?? ALL_CATEGORIES_OPTION.value}
-      onSelectionChange={(key) =>
+      value={value ?? ALL_CATEGORIES_OPTION.value}
+      onChange={(key) =>
         onChange(
           key === ALL_CATEGORIES_OPTION.value ? null : (key as CategoryValue),
         )
