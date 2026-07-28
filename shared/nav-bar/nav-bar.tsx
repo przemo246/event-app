@@ -2,17 +2,10 @@ import { Suspense } from "react";
 
 import { ButtonLink } from "@/libs/ui/button";
 import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
-import {
-  UserMenu,
-  UserMenuFallback,
-} from "@/shared/user-menu/user-menu";
+import { UserMenu, UserMenuFallback } from "@/shared/user-menu/user-menu";
 import { NavBarHeader } from "@/shared/nav-bar/nav-bar-header";
 
-const NAV_LINKS = [
-  { href: "/search", label: "Wydarzenia" },
-  { href: "/#categories", label: "Kategorie" },
-  { href: "/#cities", label: "Miasta" },
-];
+const NAV_LINKS = [{ href: "/search", label: "Wydarzenia" }];
 
 export const NavBar = () => {
   return (
