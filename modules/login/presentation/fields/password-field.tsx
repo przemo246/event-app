@@ -18,6 +18,7 @@ export const PasswordField = ({ value, onChange }: PasswordFieldProps) => {
     <TextField
       label="Hasło"
       type={isVisible ? "text" : "password"}
+      autoComplete="current-password"
       showLabel
       value={value}
       onChange={onChange}

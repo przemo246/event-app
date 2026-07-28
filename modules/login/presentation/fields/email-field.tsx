@@ -12,6 +12,7 @@ export const EmailField = ({ value, onChange }: EmailFieldProps) => {
     <TextField
       label="E-mail"
       type="email"
+      autoComplete="email"
       showLabel
       value={value}
       onChange={onChange}

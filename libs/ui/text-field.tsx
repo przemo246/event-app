@@ -13,6 +13,7 @@ export type TextFieldProps = {
   icon?: ReactNode;
   endAdornment?: ReactNode;
   type?: "text" | "email" | "password";
+  autoComplete?: string;
   showLabel?: boolean;
   className?: string;
 };
@@ -25,6 +26,7 @@ export const TextField = ({
   icon,
   endAdornment,
   type = "text",
+  autoComplete,
   showLabel = false,
   className,
 }: TextFieldProps) => {
@@ -43,6 +45,7 @@ export const TextField = ({
           {icon}
           <Input
             placeholder={placeholder}
+            autoComplete={autoComplete}
             className="w-full text-sm text-foreground placeholder:text-muted-foreground outline-none"
           />
           {endAdornment}
@@ -50,6 +53,7 @@ export const TextField = ({
       ) : (
         <Input
           placeholder={placeholder}
+          autoComplete={autoComplete}
           className="rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
         />
       )}
