@@ -34,17 +34,20 @@ export const Main = ({ tabs }: MainProps) => {
 
       {tabs}
 
-      <div className="mt-6 flex flex-col gap-4">
+      <form
+        className="mt-6 flex flex-col gap-4"
+        onSubmit={(event) => {
+          event.preventDefault();
+          facade.submit();
+        }}
+      >
         <EmailField value={email} onChange={facade.setEmail} />
         <PasswordField value={password} onChange={facade.setPassword} />
 
         {error ? <p className="text-sm text-destructive">{error}</p> : null}
 
-        <RegisterSubmitButton
-          onPress={facade.submit}
-          isDisabled={!isFormValid || isSubmitting}
-        />
-      </div>
+        <RegisterSubmitButton isDisabled={!isFormValid || isSubmitting} />
+      </form>
     </>
   );
 };

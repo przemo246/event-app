@@ -4,16 +4,12 @@ import { Button } from "@/libs/ui/button";
 
 type LoginSubmitButtonProps = {
   isDisabled?: boolean;
-  onPress: () => void;
 };
 
-export const LoginSubmitButton = ({
-  isDisabled,
-  onPress,
-}: LoginSubmitButtonProps) => {
+export const LoginSubmitButton = ({ isDisabled }: LoginSubmitButtonProps) => {
   return (
     <Button
-      onPress={onPress}
+      type="submit"
       isDisabled={isDisabled}
       className="w-full bg-primary text-primary-foreground hover:opacity-90"
     >
