@@ -9,23 +9,23 @@ import { SearchSubmitButton } from "./fields/search-submit-button";
 import { QuickSearchShortcuts } from "./quick-search-shortcuts";
 
 export const HeroSearchForm = () => {
-  const facade = useContext();
+  const ctx = useContext();
 
-  const name = facade.useName();
-  const dateFrom = facade.useDateFrom();
-  const dateTo = facade.useDateTo();
-  const location = facade.useLocation();
-  const category = facade.useCategory();
-  const dateRangeError = facade.useDateRangeError();
+  const name = ctx.useName();
+  const dateFrom = ctx.useDateFrom();
+  const dateTo = ctx.useDateTo();
+  const location = ctx.useLocation();
+  const category = ctx.useCategory();
+  const dateRangeError = ctx.useDateRangeError();
 
   return (
     <div className="rounded-xl border border-border bg-card p-5 text-left shadow-lg sm:p-6">
       <QuickSearchShortcuts />
 
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
-        <NameField value={name} onChange={facade.setName} />
-        <LocationField value={location} onChange={facade.setLocation} />
-        <CategoryField value={category} onChange={facade.setCategory} />
+        <NameField value={name} onChange={ctx.setName} />
+        <LocationField value={location} onChange={ctx.setLocation} />
+        <CategoryField value={category} onChange={ctx.setCategory} />
       </div>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
@@ -38,20 +38,20 @@ export const HeroSearchForm = () => {
               label="Data i godzina od"
               prefix="od"
               value={dateFrom}
-              onChange={facade.setDateFrom}
+              onChange={ctx.setDateFrom}
               errorMessage={dateRangeError}
             />
             <DateTimeField
               label="Data i godzina do"
               prefix="do"
               value={dateTo}
-              onChange={facade.setDateTo}
+              onChange={ctx.setDateTo}
               errorMessage={dateRangeError}
             />
           </div>
         </div>
         <SearchSubmitButton
-          onPress={facade.submit}
+          onPress={ctx.submit}
           isDisabled={Boolean(dateRangeError)}
         />
       </div>

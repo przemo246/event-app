@@ -5,12 +5,12 @@ import { useContext } from "./context";
 import { FacebookIcon, GoogleIcon } from "./social-provider-icons";
 
 export const SocialSignInButtons = () => {
-  const facade = useContext();
+  const ctx = useContext();
 
   return (
     <div className="flex flex-col gap-3">
       <Button
-        onPress={() => facade.signInWithOAuth("facebook")}
+        onPress={() => ctx.signInWithOAuth("facebook")}
         variant="outline"
         className="w-full justify-start gap-3 border border-border font-semibold text-foreground hover:bg-muted"
       >
@@ -18,7 +18,7 @@ export const SocialSignInButtons = () => {
         Kontynuuj z Facebookiem
       </Button>
       <Button
-        onPress={() => facade.signInWithOAuth("google")}
+        onPress={() => ctx.signInWithOAuth("google")}
         variant="outline"
         className="w-full justify-start gap-3 border border-border font-semibold text-foreground hover:bg-muted"
       >

@@ -4,7 +4,7 @@ import { useContext } from "./context";
 import { QUICK_DATE_RANGES } from "../configuration/quick-date-ranges";
 
 export const QuickSearchShortcuts = () => {
-  const facade = useContext();
+  const ctx = useContext();
 
   return (
     <div className="flex flex-wrap gap-2">
@@ -14,8 +14,8 @@ export const QuickSearchShortcuts = () => {
           type="button"
           onClick={() => {
             const { from, to } = range.getRange();
-            facade.setDateFrom(from);
-            facade.setDateTo(to);
+            ctx.setDateFrom(from);
+            ctx.setDateTo(to);
           }}
           className="rounded-full border border-border px-4 py-1.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-muted"
         >

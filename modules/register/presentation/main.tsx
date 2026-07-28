@@ -12,13 +12,13 @@ type MainProps = {
 };
 
 export const Main = ({ tabs }: MainProps) => {
-  const facade = useContext();
+  const ctx = useContext();
 
-  const email = facade.useEmail();
-  const password = facade.usePassword();
-  const error = facade.useError();
-  const isSubmitting = facade.useIsSubmitting();
-  const isFormValid = facade.useIsFormValid();
+  const email = ctx.useEmail();
+  const password = ctx.usePassword();
+  const error = ctx.useError();
+  const isSubmitting = ctx.useIsSubmitting();
+  const isFormValid = ctx.useIsFormValid();
 
   return (
     <>
@@ -38,11 +38,11 @@ export const Main = ({ tabs }: MainProps) => {
         className="mt-6 flex flex-col gap-4"
         onSubmit={(event) => {
           event.preventDefault();
-          facade.submit();
+          ctx.submit();
         }}
       >
-        <EmailField value={email} onChange={facade.setEmail} />
-        <PasswordField value={password} onChange={facade.setPassword} />
+        <EmailField value={email} onChange={ctx.setEmail} />
+        <PasswordField value={password} onChange={ctx.setPassword} />
 
         {error ? <p className="text-sm text-destructive">{error}</p> : null}
 
