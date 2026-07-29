@@ -8,7 +8,7 @@ export const schema = () =>
         password: z.string().min(1),
       }),
       z.object({
-        provider: z.literal("google"),
+        provider: z.union([z.literal("google"), z.literal("facebook")]),
       }),
     ]),
     out: z.union([
