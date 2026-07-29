@@ -1,8 +1,8 @@
 import { catchError, EMPTY, from, switchMap, tap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { signUpWithPassword } from "../../integration/auth";
-import { goToLanding } from "../../integration/navigation";
+import { register } from "../../integration/repository";
+import { redirectTo } from "../../integration/navigation";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
 export const submit = (store: Store, { ofType }: Bus) =>
@@ -18,10 +18,10 @@ export const submit = (store: Store, { ofType }: Bus) =>
         password: store.$password.get(),
       };
 
-      return from(signUpWithPassword(credentials)).pipe(
-        tap(() => {
+      return from(register(credentials)).pipe(
+        tap((location) => {
           store.$isSubmitting.set(false);
-          goToLanding();
+          redirectTo(location);
         }),
         catchError(() => {
           store.$isSubmitting.set(false);
