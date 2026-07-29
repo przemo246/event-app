@@ -1,5 +1,5 @@
 import type { Provider } from "@supabase/supabase-js";
-import { schema } from "@/shared/server-contracts/login-user";
+import { schema } from "@/shared/server-contracts/schemas/login-user";
 import { InternalServer } from "../../core/error-handling";
 import { withZodSchema } from "../../adapter/zod";
 import { publicProcedure } from "../../core/procedure";

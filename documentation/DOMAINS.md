@@ -15,7 +15,7 @@ This document defines the core domains in the Event App application.
 
 **Key Concepts:**
 
-- Account settings: Name, email, password, account deletion
+- Account settings: username, email (read-only), password, account deletion
 - Created events management - a sortable list of events created by the user, with options to delete, edit, or view details
 
 **Role level:** Authenticated user

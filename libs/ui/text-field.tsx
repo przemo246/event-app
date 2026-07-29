@@ -15,6 +15,7 @@ export type TextFieldProps = {
   type?: "text" | "email" | "password";
   autoComplete?: string;
   showLabel?: boolean;
+  isReadOnly?: boolean;
   className?: string;
 };
 
@@ -28,6 +29,7 @@ export const TextField = ({
   type = "text",
   autoComplete,
   showLabel = false,
+  isReadOnly,
   className,
 }: TextFieldProps) => {
   return (
@@ -35,6 +37,7 @@ export const TextField = ({
       type={type}
       value={value}
       onChange={onChange}
+      isReadOnly={isReadOnly}
       className={cn("flex flex-col gap-1", className)}
     >
       <Label className={showLabel ? "text-sm font-medium text-foreground" : "sr-only"}>
@@ -46,7 +49,7 @@ export const TextField = ({
           <Input
             placeholder={placeholder}
             autoComplete={autoComplete}
-            className="w-full text-sm text-foreground placeholder:text-muted-foreground outline-none"
+            className="w-full text-sm text-foreground placeholder:text-muted-foreground outline-none read-only:cursor-default read-only:text-muted-foreground"
           />
           {endAdornment}
         </div>
@@ -54,7 +57,7 @@ export const TextField = ({
         <Input
           placeholder={placeholder}
           autoComplete={autoComplete}
-          className="rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring read-only:cursor-default read-only:bg-muted read-only:text-muted-foreground"
         />
       )}
     </AriaTextField>

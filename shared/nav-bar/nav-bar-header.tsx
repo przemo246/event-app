@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { cn } from "@/libs/react-kit/cn";
 
-const SHADOW_PATHS = ["/auth/login", "/auth/register"];
+const SHADOW_PATHS = ["/auth/login", "/auth/register", "/account/profile"];
 
 type NavBarHeaderProps = {
   children: React.ReactNode;
@@ -13,7 +13,12 @@ export const NavBarHeader = ({ children }: NavBarHeaderProps) => {
   const pathname = usePathname();
 
   return (
-    <header className={cn("bg-background", SHADOW_PATHS.includes(pathname) && "shadow-md")}>
+    <header
+      className={cn(
+        "bg-background",
+        SHADOW_PATHS.includes(pathname) && "shadow-md",
+      )}
+    >
       {children}
     </header>
   );
