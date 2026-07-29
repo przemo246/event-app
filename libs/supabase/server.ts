@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
  * global variable. Always create a new client within each function when using
  * it.
  */
-export async function createClient() {
+export async function supabaseServer() {
   const cookieStore = await cookies();
 
   return createServerClient(
@@ -32,3 +32,5 @@ export async function createClient() {
     },
   );
 }
+
+export type SupabaseServer = Awaited<ReturnType<typeof supabaseServer>>;

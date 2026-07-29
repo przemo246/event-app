@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/libs/ui/button";
-import { createClient } from "@/libs/supabase/server";
+import { supabaseServer } from "@/libs/supabase/server";
 import { UserMenuDropdown } from "./user-menu-dropdown";
 
 export const UserMenuFallback = () => (
@@ -9,7 +9,7 @@ export const UserMenuFallback = () => (
 );
 
 export const UserMenu = async () => {
-  const supabase = await createClient();
+  const supabase = await supabaseServer();
   const { data } = await supabase.auth.getClaims();
 
   if (!data?.claims) {
@@ -19,7 +19,11 @@ export const UserMenu = async () => {
   return (
     <>
       <UserMenuDropdown />
-      <ButtonLink href="/add-event" variant="outline" className="h-10 font-bold">
+      <ButtonLink
+        href="/add-event"
+        variant="outline"
+        className="h-10 font-bold"
+      >
         Dodaj wydarzenie
       </ButtonLink>
     </>
