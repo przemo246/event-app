@@ -22,7 +22,7 @@ export const loginUser = publicProcedure({
       }
 
       return {
-        code: 303,
+        code: 200,
         location: oauthResult.data.url,
       };
     }
@@ -37,7 +37,7 @@ export const loginUser = publicProcedure({
     }
 
     return {
-      code: 303,
+      code: 200,
       location: "/",
     };
   },

@@ -13,7 +13,7 @@ export const schema = () =>
     ]),
     out: z.union([
       z.object({
-        code: z.literal(303),
+        code: z.literal(200),
         location: z.string(),
       }),
       z.object({
