@@ -3,10 +3,14 @@ import { OAUTH_CALLBACK_PATH } from "../configuration/constraints";
 import type { Credentials, OAuthProvider } from "../domain/models";
 
 export const signInWithPassword = async ({ email, password }: Credentials) => {
-  const supabase = createClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+    redirect: "manual",
+  });
 
-  if (error) throw error;
+  if (response.type !== "opaqueredirect") throw new Error("Failed to login.");
 };
 
 export const redirectToOAuthProvider = async (provider: OAuthProvider) => {

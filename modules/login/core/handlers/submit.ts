@@ -1,7 +1,7 @@
 import { catchError, EMPTY, from, switchMap, tap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { signInWithPassword } from "../../integration/auth";
+import { signInWithPassword } from "../../integration/repository";
 import { goToLanding } from "../../integration/navigation";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
