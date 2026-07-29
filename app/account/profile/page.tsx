@@ -8,7 +8,7 @@ const AccountProfileGuard = async () => {
   const { data } = await supabase.auth.getClaims();
 
   if (!data?.claims) {
-    redirect("/auth/login");
+    redirect("/login");
   }
 
   return <UserProfileModule />;

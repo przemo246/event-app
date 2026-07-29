@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { cn } from "@/libs/react-kit/cn";
 
-const SHADOW_PATHS = ["/auth/login", "/auth/register", "/account/profile"];
+const SHADOW_PATHS = ["/login", "/register", "/account/profile"];
 
 type NavBarHeaderProps = {
   children: React.ReactNode;

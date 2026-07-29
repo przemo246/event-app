@@ -7,8 +7,8 @@ import { cn } from "@/libs/react-kit/cn";
 export type AuthTab = "login" | "register";
 
 const TABS: { value: AuthTab; label: string; href: string }[] = [
-  { value: "login", label: "Zaloguj się", href: "/auth/login" },
-  { value: "register", label: "Zarejestruj się", href: "/auth/register" },
+  { value: "login", label: "Zaloguj się", href: "/login" },
+  { value: "register", label: "Zarejestruj się", href: "/register" },
 ];
 
 export const AuthModeTabs = () => {

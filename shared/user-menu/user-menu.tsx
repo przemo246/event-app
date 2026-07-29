@@ -3,7 +3,7 @@ import { supabaseServer } from "@/libs/supabase/server";
 import { UserMenuDropdown } from "./user-menu-dropdown";
 
 export const UserMenuFallback = () => (
-  <ButtonLink href="/auth/login" variant="solid" className="h-10 font-bold">
+  <ButtonLink href="/login" variant="solid" className="h-10 font-bold">
     Zaloguj się
   </ButtonLink>
 );
