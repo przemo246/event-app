@@ -17,19 +17,24 @@ This document defines the core domains in the Event App application.
 
 - Account settings: Name, email, password, account deletion
 - Created events management - a sortable list of events created by the user, with options to delete, edit, or view details
-- Favorites management - a sortable list of events marked as favorites, with options to delete or view details
 
 **Role level:** Authenticated user
 
-**Out of Scope:**
+---
 
-- Authentication flows (handled by Authentication domain)
-- Session management (handled by Authentication domain)
-- Access control (handled by Authentication domain)
+## 2. Favourite Events
+
+**Responsibility:** Favorite events management.
+
+**Key Concepts:**
+
+- Favorite events list: a sortable list of events marked as favorites, with option to delete or view details
+
+**Role level:** Authenticated user
 
 ---
 
-## 2. Event Creation
+## 3. Event Creation
 
 **Responsibility:** Creating a new event.
 
@@ -55,7 +60,7 @@ Categories:
 
 ---
 
-## 3. Authentication
+## 4. Authentication
 
 **Responsibility:** User authentication, authorization, and session management.
 
@@ -77,7 +82,7 @@ Categories:
 
 ---
 
-## 4. Event Search
+## 5. Event Search
 
 **Responsibility:** Searching for events using filters and sorting options.
 
