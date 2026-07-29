@@ -5,7 +5,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "db:init": "pnpx supabase init",
+    "db:start": "pnpx supabase start",
+    "db:gen-types": "pnpx supabase gen types typescript --local > shared/data-sources/db-schema.ts",
+    "db:reset": "pnpx supabase db reset",
+    "db:stop": "pnpx supabase stop",
+    "db:migration:new": "pnpx supabase migration new",
+    "db:migration:up": "pnpx supabase migration up"
   },
   "dependencies": {
     "@internationalized/date": "^3.12.2",
