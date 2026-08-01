@@ -4,7 +4,6 @@ import { supabaseServer } from "@/libs/supabase/server";
 import { Spinner } from "@/libs/ui/spinner";
 import { Provider } from "@/modules/user-profile/presentation/context";
 import { Main } from "@/modules/user-profile/presentation/main";
-import { PageShell } from "@/modules/user-profile/presentation/page-shell";
 
 const Guard = async () => {
   const supabase = await supabaseServer();
@@ -23,10 +22,13 @@ const Guard = async () => {
 
 export const Module = () => {
   return (
-    <PageShell>
+    <div className="mx-auto w-full max-w-130 px-6 py-12">
+      <h1 className="mb-8 text-2xl font-bold text-foreground">
+        Ustawienia konta
+      </h1>
       <Suspense fallback={<Spinner />}>
         <Guard />
       </Suspense>
-    </PageShell>
+    </div>
   );
 };
