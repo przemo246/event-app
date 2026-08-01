@@ -1,9 +1,9 @@
-export type Account = {
+export type UserProfile = {
   username: string;
   email: string;
 };
 
-export type AccountDetails = {
+export type UserProfileDetails = {
   username: string;
 };
 

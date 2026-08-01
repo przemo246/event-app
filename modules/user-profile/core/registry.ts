@@ -1,7 +1,7 @@
 import { type Store } from "./store";
-import { loadAccount } from "./handlers/load-account";
+import { loadUserProfile } from "./handlers/load-user-profile";
 import { setUsername } from "./handlers/set-username";
-import { saveAccountDetails } from "./handlers/save-account-details";
+import { saveUserProfileDetails } from "./handlers/save-user-profile-details";
 import { setCurrentPassword } from "./handlers/set-current-password";
 import { setNewPassword } from "./handlers/set-new-password";
 import { changePassword } from "./handlers/change-password";
@@ -12,9 +12,9 @@ export const createRegistry = (store: Store) => {
   const bus = createBus();
 
   const register = bus.createRegistry(
-    loadAccount(store, bus),
+    loadUserProfile(store, bus),
     setUsername(store, bus),
-    saveAccountDetails(store, bus),
+    saveUserProfileDetails(store, bus),
     setCurrentPassword(store, bus),
     setNewPassword(store, bus),
     changePassword(store, bus),

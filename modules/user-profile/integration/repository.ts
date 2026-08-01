@@ -1,24 +1,25 @@
 import { createClient } from "@/libs/supabase/client";
-import type { Account, AccountDetails, PasswordChange } from "../domain/models";
+import type {
+  UserProfile,
+  UserProfileDetails,
+  PasswordChange,
+} from "../domain/models";
 
-export const getAccount = async (): Promise<Account> => {
+export const getUserProfile = async (): Promise<UserProfile> => {
   const response = await fetch("/api/config/profile");
 
   if (!response.ok) {
     throw new Error("Failed to load account.");
   }
 
-  const { username, email } = (await response.json()) as {
-    username: string;
-    email: string;
-  };
+  const { username, email } = (await response.json()) as UserProfile;
 
   return { username, email };
 };
 
-export const updateAccountDetails = async ({
+export const updateUserProfileDetails = async ({
   username,
-}: AccountDetails): Promise<void> => {
+}: UserProfileDetails): Promise<void> => {
   const response = await fetch("/api/config/profile", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

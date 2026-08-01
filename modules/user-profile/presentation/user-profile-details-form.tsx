@@ -5,21 +5,21 @@ import { useContext } from "./context";
 import { UsernameField } from "./fields/username-field";
 import { EmailField } from "./fields/email-field";
 
-export const AccountDetailsForm = () => {
+export const UserProfileDetailsForm = () => {
   const ctx = useContext();
 
   const username = ctx.useUsername();
   const email = ctx.useEmail();
   const error = ctx.useDetailsError();
   const isSaving = ctx.useIsSavingDetails();
-  const isValid = ctx.useIsAccountDetailsValid();
+  const isValid = ctx.useIsUserProfileDetailsValid();
 
   return (
     <form
       className="flex flex-col gap-4"
       onSubmit={(event) => {
         event.preventDefault();
-        ctx.saveAccountDetails();
+        ctx.saveUserProfileDetails();
       }}
     >
       <UsernameField value={username} onChange={ctx.setUsername} />

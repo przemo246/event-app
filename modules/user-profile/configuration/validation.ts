@@ -1,12 +1,12 @@
 export const VALIDATION_ERROR_MAP = {
-  loadAccountFailed: "Nie udało się wczytać danych konta. Spróbuj ponownie.",
-  saveAccountDetailsFailed: "Nie udało się zapisać zmian. Spróbuj ponownie.",
+  loadUserProfileFailed: "Nie udało się wczytać danych konta. Spróbuj ponownie.",
+  saveUserProfileDetailsFailed: "Nie udało się zapisać zmian. Spróbuj ponownie.",
   changePasswordFailed:
     "Nie udało się zmienić hasła. Sprawdź obecne hasło i spróbuj ponownie.",
   deleteAccountFailed: "Nie udało się usunąć konta. Spróbuj ponownie.",
 } as const;
 
-export const isAccountDetailsValid = (username: string) =>
+export const isUserProfileDetailsValid = (username: string) =>
   username.trim().length > 0;
 
 export const isPasswordChangeValid = (

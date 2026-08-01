@@ -3,9 +3,9 @@ import type { Store } from "./store";
 
 export const createFacade = (store: Store, trigger: Registry["trigger"]) => {
   return {
-    loadAccount: () => trigger("[TRIGGER]_LOAD_ACCOUNT"),
+    loadUserProfile: () => trigger("[TRIGGER]_LOAD_USER_PROFILE"),
     setUsername: (username: string) => trigger("[TRIGGER]_SET_USERNAME", username),
-    saveAccountDetails: () => trigger("[TRIGGER]_SAVE_ACCOUNT_DETAILS"),
+    saveUserProfileDetails: () => trigger("[TRIGGER]_SAVE_USER_PROFILE_DETAILS"),
     setCurrentPassword: (currentPassword: string) =>
       trigger("[TRIGGER]_SET_CURRENT_PASSWORD", currentPassword),
     setNewPassword: (newPassword: string) =>
@@ -14,10 +14,10 @@ export const createFacade = (store: Store, trigger: Registry["trigger"]) => {
     deleteAccount: () => trigger("[TRIGGER]_DELETE_ACCOUNT"),
     useUsername: () => store.$username.use(),
     useEmail: () => store.$email.use(),
-    useIsAccountLoading: () => store.$isAccountLoading.use(),
+    useIsUserProfileLoading: () => store.$isUserProfileLoading.use(),
     useIsSavingDetails: () => store.$isSavingDetails.use(),
     useDetailsError: () => store.$detailsError.use(),
-    useIsAccountDetailsValid: () => store.$isAccountDetailsValid.use(),
+    useIsUserProfileDetailsValid: () => store.$isUserProfileDetailsValid.use(),
     useCurrentPassword: () => store.$currentPassword.use(),
     useNewPassword: () => store.$newPassword.use(),
     useIsChangingPassword: () => store.$isChangingPassword.use(),

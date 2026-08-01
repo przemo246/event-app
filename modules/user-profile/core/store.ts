@@ -1,10 +1,10 @@
 import { atom, computed } from "@/libs/react-kit/supa-store";
-import { isAccountDetailsValid, isPasswordChangeValid } from "../configuration/validation";
+import { isUserProfileDetailsValid, isPasswordChangeValid } from "../configuration/validation";
 
 export const createStore = () => {
   const $username = atom("");
   const $email = atom("");
-  const $isAccountLoading = atom(true);
+  const $isUserProfileLoading = atom(true);
   const $isSavingDetails = atom(false);
   const $detailsError = atom<string | null>(null);
 
@@ -19,7 +19,7 @@ export const createStore = () => {
   return {
     $username,
     $email,
-    $isAccountLoading,
+    $isUserProfileLoading,
     $isSavingDetails,
     $detailsError,
     $currentPassword,
@@ -28,7 +28,7 @@ export const createStore = () => {
     $passwordError,
     $isDeletingAccount,
     $deleteError,
-    $isAccountDetailsValid: computed($username, isAccountDetailsValid),
+    $isUserProfileDetailsValid: computed($username, isUserProfileDetailsValid),
     $isPasswordChangeValid: computed(
       [$currentPassword, $newPassword],
       isPasswordChangeValid,

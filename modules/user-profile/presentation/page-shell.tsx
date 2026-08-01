@@ -6,7 +6,7 @@ type PageShellProps = {
 
 export const PageShell = ({ children }: PageShellProps) => {
   return (
-    <div className="mx-auto w-full max-w-2xl px-6 py-12">
+    <div className="mx-auto w-full max-w-130 px-6 py-12">
       <h1 className="mb-8 text-2xl font-bold text-foreground">
         Ustawienia konta
       </h1>

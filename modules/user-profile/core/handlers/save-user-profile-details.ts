@@ -1,13 +1,13 @@
 import { catchError, EMPTY, from, switchMap, tap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { updateAccountDetails } from "../../integration/repository";
+import { updateUserProfileDetails } from "../../integration/repository";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
-export const saveAccountDetails = (store: Store, { ofType }: Bus) =>
-  ofType("[TRIGGER]_SAVE_ACCOUNT_DETAILS").pipe(
+export const saveUserProfileDetails = (store: Store, { ofType }: Bus) =>
+  ofType("[TRIGGER]_SAVE_USER_PROFILE_DETAILS").pipe(
     switchMap(() => {
-      if (!store.$isAccountDetailsValid.get()) return EMPTY;
+      if (!store.$isUserProfileDetailsValid.get()) return EMPTY;
 
       store.$detailsError.set(null);
       store.$isSavingDetails.set(true);
@@ -16,13 +16,15 @@ export const saveAccountDetails = (store: Store, { ofType }: Bus) =>
         username: store.$username.get(),
       };
 
-      return from(updateAccountDetails(details)).pipe(
+      return from(updateUserProfileDetails(details)).pipe(
         tap(() => {
           store.$isSavingDetails.set(false);
         }),
         catchError(() => {
           store.$isSavingDetails.set(false);
-          store.$detailsError.set(VALIDATION_ERROR_MAP.saveAccountDetailsFailed);
+          store.$detailsError.set(
+            VALIDATION_ERROR_MAP.saveUserProfileDetailsFailed,
+          );
           return EMPTY;
         }),
       );
