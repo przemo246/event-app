@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { Spinner } from "@/libs/ui/spinner";
 import { useContext } from "./context";
 import { AccountDetailsForm } from "./account-details-form";
 import { PasswordChangeForm } from "./password-change-form";
@@ -16,7 +17,7 @@ export const Main = () => {
   }, [ctx]);
 
   if (isAccountLoading) {
-    return <p className="text-sm text-muted-foreground">Wczytywanie...</p>;
+    return <Spinner />;
   }
 
   return (

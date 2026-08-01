@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { Module as UserProfileModule } from "@/core/modules/user-profile";
 import { supabaseServer } from "@/libs/supabase/server";
+import { Spinner } from "@/libs/ui/spinner";
 
 const AccountProfileGuard = async () => {
   const supabase = await supabaseServer();
@@ -20,11 +21,7 @@ const Page = () => {
       <h1 className="mb-8 text-2xl font-bold text-foreground">
         Ustawienia konta
       </h1>
-      <Suspense
-        fallback={
-          <p className="text-sm text-muted-foreground">Wczytywanie...</p>
-        }
-      >
+      <Suspense fallback={<Spinner />}>
         <AccountProfileGuard />
       </Suspense>
     </div>
