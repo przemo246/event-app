@@ -70,13 +70,12 @@
     @apply border-border;
   }
 
-  html,
-  body {
-    @apply bg-background h-full;
+  html {
+    @apply bg-background min-h-full;
   }
 
   body {
-    @apply text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
   }
 
   button:not(:disabled) {

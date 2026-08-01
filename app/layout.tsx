@@ -29,11 +29,11 @@ type RootLayoutProps = Readonly<{
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="pl" className={sora.variable} suppressHydrationWarning>
-      <body>
+      <body className="flex min-h-screen flex-col">
         <ThemeProvider>
           <LocaleProvider>
             <NavBar />
-            {children}
+            <main className="flex flex-1 flex-col">{children}</main>
             <SiteFooter />
           </LocaleProvider>
         </ThemeProvider>
