@@ -1,15 +1,10 @@
-import type { ReactNode } from "react";
 import { Provider } from "@/modules/register/presentation/context";
 import { Main } from "@/modules/register/presentation/main";
 
-type ModuleProps = {
-  tabs: ReactNode;
-};
-
-export const Module = ({ tabs }: ModuleProps) => {
+export const Module = () => {
   return (
     <Provider>
-      <Main tabs={tabs} />
+      <Main />
     </Provider>
   );
 };
