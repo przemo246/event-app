@@ -2,34 +2,32 @@ import { createClient } from "@/libs/supabase/client";
 import type { Account, AccountDetails, PasswordChange } from "../domain/models";
 
 export const getAccount = async (): Promise<Account> => {
-  const supabase = createClient();
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-  if (userError) throw userError;
+  const response = await fetch("/api/config/profile");
 
-  const { data: profile, error: profileError } = await supabase
-    .from("profiles")
-    .select("username")
-    .eq("id", userData.user.id)
-    .maybeSingle();
-  if (profileError) throw profileError;
+  if (!response.ok) {
+    throw new Error("Failed to load account.");
+  }
 
-  return {
-    username: profile?.username ?? "",
-    email: userData.user.email ?? "",
+  const { username, email } = (await response.json()) as {
+    username: string;
+    email: string;
   };
+
+  return { username, email };
 };
 
 export const updateAccountDetails = async ({
   username,
 }: AccountDetails): Promise<void> => {
-  const supabase = createClient();
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-  if (userError) throw userError;
+  const response = await fetch("/api/config/profile", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username }),
+  });
 
-  const { error: profileError } = await supabase
-    .from("profiles")
-    .upsert({ id: userData.user.id, username });
-  if (profileError) throw profileError;
+  if (!response.ok) {
+    throw new Error("Failed to update account.");
+  }
 };
 
 export const changeAccountPassword = async ({
