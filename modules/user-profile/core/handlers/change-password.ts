@@ -1,7 +1,7 @@
 import { catchError, EMPTY, from, switchMap, tap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { changeAccountPassword } from "../../integration/account";
+import { changeAccountPassword } from "../../integration/repository";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
 export const changePassword = (store: Store, { ofType }: Bus) =>

@@ -1,7 +1,7 @@
 import { catchError, EMPTY, from, switchMap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { deleteAccount as deleteAccountRequest } from "../../integration/account";
+import { deleteAccount as deleteAccountRequest } from "../../integration/repository";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
 export const deleteAccount = (store: Store, { ofType }: Bus) =>

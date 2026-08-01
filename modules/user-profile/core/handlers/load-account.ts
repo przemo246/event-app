@@ -1,7 +1,7 @@
 import { catchError, EMPTY, from, switchMap, tap } from "rxjs";
 import type { Store } from "../store";
 import type { Bus } from "../bus";
-import { getAccount } from "../../integration/account";
+import { getAccount } from "../../integration/repository";
 import { VALIDATION_ERROR_MAP } from "../../configuration/validation";
 
 export const loadAccount = (store: Store, { ofType }: Bus) =>
