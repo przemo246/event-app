@@ -1,9 +1,10 @@
 import { Suspense } from "react";
 
 import { ButtonLink } from "@/libs/ui/button";
-import { ThemeToggle } from "@/shared/theme-toggle/theme-toggle";
+import { ThemeToggle } from "@/shared/nav-bar/presentation/theme-toggle";
 import { UserMenu, UserMenuFallback } from "@/shared/user-menu/user-menu";
-import { NavBarHeader } from "@/shared/nav-bar/nav-bar-header";
+import { NavBarHeader } from "@/shared/nav-bar/presentation/nav-bar-header";
+import { FavoriteEventsLink } from "@/shared/nav-bar/presentation/favorite-events-link";
 
 const NAV_LINKS: { href: string; label: string }[] = [];
 
@@ -32,6 +33,7 @@ export const NavBar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
+          <FavoriteEventsLink />
           <Suspense fallback={<UserMenuFallback />}>
             <UserMenu />
           </Suspense>

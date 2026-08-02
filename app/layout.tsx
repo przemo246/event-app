@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import { LocaleProvider } from "@/shared/locale-provider/locale-provider";
-import { NavBar } from "@/shared/nav-bar/nav-bar";
+import { NavBar } from "@/shared/nav-bar/presentation/nav-bar";
 import { SiteFooter } from "@/shared/site-footer/site-footer";
 import { ThemeProvider } from "@/shared/theme-provider/theme-provider";
 import "../core/style/index.css";
