@@ -1,6 +1,7 @@
 "use client";
 
 import type { ComponentProps } from "react";
+import { forwardRef } from "react";
 import Link from "next/link";
 import {
   Button as AriaButton,
@@ -81,10 +82,16 @@ export const Button = ({
  * ButtonLink
  * ============================================================================= */
 
-export const ButtonLink = ({
-  variant = "underline",
-  className,
-  ...props
-}: ButtonLinkProps) => {
-  return <Link className={buttonLinkVariants(variant, className)} {...props} />;
-};
+export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
+  ({ variant = "underline", className, ...props }, ref) => {
+    return (
+      <Link
+        ref={ref}
+        className={buttonLinkVariants(variant, className)}
+        {...props}
+      />
+    );
+  },
+);
+
+ButtonLink.displayName = "ButtonLink";
