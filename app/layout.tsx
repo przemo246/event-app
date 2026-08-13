@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
-import { LocaleProvider } from "@/shared/locale-provider/locale-provider";
+import { LocaleProvider } from "@/shared/locale-provider/presentation/locale-provider";
 import { NavBar } from "@/shared/nav-bar/presentation/nav-bar";
-import { SiteFooter } from "@/shared/site-footer/site-footer";
-import { ThemeProvider } from "@/shared/theme-provider/theme-provider";
+import { SiteFooter } from "@/shared/site-footer/presentation/site-footer";
+import { ThemeProvider } from "@/shared/theme-provider/presentation/theme-provider";
 import "../core/style/index.css";
 
 const sora = Sora({

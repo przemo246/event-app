@@ -1,4 +1,4 @@
-import { EventCard } from "@/shared/event-card/event-card";
+import { EventCard } from "@/shared/event-card/presentation/event-card";
 import { CATEGORY_OPTIONS } from "../configuration/constraints";
 import { MOCK_PROMOTED_EVENTS } from "../configuration/mock-promoted-events";
 

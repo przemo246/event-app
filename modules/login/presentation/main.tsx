@@ -1,6 +1,6 @@
 "use client";
 
-import { AuthModeTabs } from "@/shared/auth-mode-tabs/auth-mode-tabs";
+import { AuthModeTabs } from "@/shared/auth-mode-tabs/presentation/auth-mode-tabs";
 import { useContext } from "./context";
 import { SocialSignInButtons } from "./social-sign-in-buttons";
 import { ForgotPasswordLink } from "./forgot-password-link";

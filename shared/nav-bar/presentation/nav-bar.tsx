@@ -2,7 +2,7 @@ import { Suspense } from "react";
 
 import { ButtonLink } from "@/libs/ui/button";
 import { ThemeToggle } from "@/shared/nav-bar/presentation/theme-toggle";
-import { UserMenu, UserMenuFallback } from "@/shared/user-menu/user-menu";
+import { UserMenu, UserMenuFallback } from "@/shared/user-menu/presentation/user-menu";
 import { NavBarHeader } from "@/shared/nav-bar/presentation/nav-bar-header";
 import { FavoriteEventsLink } from "@/shared/nav-bar/presentation/favorite-events-link";
 
