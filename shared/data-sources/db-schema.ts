@@ -34,6 +34,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      events: {
+        Row: {
+          category: Database["public"]["Enums"]["event_category"]
+          created_at: string
+          date_time_from: string
+          date_time_to: string | null
+          description: string
+          id: string
+          image: string | null
+          link: string | null
+          location: string
+          tags: string[] | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["event_category"]
+          created_at?: string
+          date_time_from: string
+          date_time_to?: string | null
+          description: string
+          id?: string
+          image?: string | null
+          link?: string | null
+          location: string
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["event_category"]
+          created_at?: string
+          date_time_from?: string
+          date_time_to?: string | null
+          description?: string
+          id?: string
+          image?: string | null
+          link?: string | null
+          location?: string
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           id: string
@@ -60,7 +108,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      event_category:
+        | "music_entertainment"
+        | "business_professional"
+        | "food_drink"
+        | "sports_wellness"
+        | "arts_culture"
+        | "community_hobbies"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -190,7 +244,16 @@ export const Constants = {
     Enums: {},
   },
   public: {
-    Enums: {},
+    Enums: {
+      event_category: [
+        "music_entertainment",
+        "business_professional",
+        "food_drink",
+        "sports_wellness",
+        "arts_culture",
+        "community_hobbies",
+      ],
+    },
   },
 } as const
 
