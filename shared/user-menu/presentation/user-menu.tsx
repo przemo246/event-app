@@ -20,7 +20,7 @@ export const UserMenu = async () => {
     <>
       <UserMenuDropdown />
       <ButtonLink
-        href="/add-event"
+        href="/events/new"
         variant="outline"
         className="h-10 font-bold"
       >
