@@ -1,24 +1,8 @@
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
-import { supabaseServer } from "@/libs/supabase/server";
+
 import { Spinner } from "@/libs/ui/spinner";
 import { Provider } from "@/modules/event-creation/presentation/context";
 import { Main } from "@/modules/event-creation/presentation/main";
-
-const Guard = async () => {
-  const supabase = await supabaseServer();
-  const { data } = await supabase.auth.getClaims();
-
-  if (!data?.claims) {
-    redirect("/login");
-  }
-
-  return (
-    <Provider>
-      <Main />
-    </Provider>
-  );
-};
 
 export const Module = () => {
   return (
@@ -27,7 +11,9 @@ export const Module = () => {
         Nowe wydarzenie
       </h1>
       <Suspense fallback={<Spinner />}>
-        <Guard />
+        <Provider>
+          <Main />
+        </Provider>
       </Suspense>
     </div>
   );
