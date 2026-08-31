@@ -1,6 +1,6 @@
 # afisz
 
-Wyszukiwarka wydarzeń w Polsce — concerts, festivals, theatre, and sports events, searchable by name, location, date, and category.
+Afisz is an event search engine for Poland, letting users find concerts, festivals, theatre, and sports events by name, location, date, and category.
 
 ## Tech Stack
 
@@ -9,13 +9,12 @@ Wyszukiwarka wydarzeń w Polsce — concerts, festivals, theatre, and sports eve
 - **[TypeScript](https://www.typescriptlang.org)**
 - **[Tailwind CSS](https://tailwindcss.com)** — styling
 - **[Supabase](https://supabase.com)** — Postgres database, auth, and realtime
-- **[oRPC](https://orpc.unnoq.com)** — end-to-end type-safe API layer
-- **[Zod](https://zod.dev)** — schema validation
+- **[Zod](https://zod.dev)** — schema validation, used by a custom procedure layer (`server/application/`) backing Next.js Route Handlers
 - **RxJS + [Nanostores](https://github.com/nanostores/nanostores)** — state management
 - **[React Aria Components](https://react-spectrum.adobe.com/react-aria/)** — accessible UI primitives
 - **pnpm** — package management
 
-The app follows a modular monolith architecture (`app/`, `modules/`, `core/`, `contracts/`, `shared/`, `lib/`) — see [documentation/ADR.md](documentation/ADR.md) for details, and [documentation/DOMAINS.md](documentation/DOMAINS.md) for the core application domains.
+The app follows a modular monolith architecture (`app/`, `modules/`, `core/`, `server/`, `shared/`, `libs/`) — see [documentation/ADR.md](documentation/ADR.md) for details, and [documentation/DOMAINS.md](documentation/DOMAINS.md) for the core application domains.
 
 ## Getting Started
 
@@ -41,3 +40,7 @@ The app follows a modular monolith architecture (`app/`, `modules/`, `core/`, `c
 - `pnpm build` — build for production
 - `pnpm start` — start the production server
 - `pnpm lint` / `pnpm lint:fix` — lint the codebase
+- `pnpm test` / `pnpm test:watch` — run the test suite with Vitest
+- `pnpm db:start` / `pnpm db:stop` — start/stop the local Supabase stack
+- `pnpm db:migration:new` / `pnpm db:migration:up` — create/apply database migrations
+- `pnpm db:gen-types` — regenerate TypeScript types from the local DB schema
