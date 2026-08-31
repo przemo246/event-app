@@ -21,6 +21,7 @@ export type SelectFieldOption<T extends Key> = {
 
 export type SelectFieldProps<T extends Key> = {
   label: string;
+  hideLabel?: boolean;
   options: SelectFieldOption<T>[];
   value: T;
   onChange: (value: T) => void;
@@ -29,6 +30,7 @@ export type SelectFieldProps<T extends Key> = {
 
 export const SelectField = <T extends Key>({
   label,
+  hideLabel,
   options,
   value,
   onChange,
@@ -40,7 +42,14 @@ export const SelectField = <T extends Key>({
       onChange={(key) => onChange(key as T)}
       className={cn("flex flex-col gap-1", className)}
     >
-      <Label className="text-sm font-medium text-foreground">{label}</Label>
+      <Label
+        className={cn(
+          "text-sm font-medium text-foreground",
+          hideLabel && "sr-only",
+        )}
+      >
+        {label}
+      </Label>
       <Button className="justify-between gap-2 border-border bg-background px-4 py-3 text-left text-sm font-normal text-foreground hover:opacity-100">
         <SelectValue />
         <ChevronDown className="size-4 text-muted-foreground" />
