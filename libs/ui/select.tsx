@@ -40,7 +40,7 @@ export const SelectField = <T extends Key>({
       onChange={(key) => onChange(key as T)}
       className={cn("flex flex-col gap-1", className)}
     >
-      <Label className="sr-only">{label}</Label>
+      <Label className="text-sm font-medium text-foreground">{label}</Label>
       <Button className="justify-between gap-2 border-border bg-background px-4 py-3 text-left text-sm font-normal text-foreground hover:opacity-100">
         <SelectValue />
         <ChevronDown className="size-4 text-muted-foreground" />
