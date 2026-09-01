@@ -1,10 +1,6 @@
-export type EventCategory =
-  | "music_entertainment"
-  | "business_professional"
-  | "food_drink"
-  | "sports_wellness"
-  | "arts_culture"
-  | "community_hobbies";
+import type { EventCategory } from "@/shared/event-category/domain/models";
+
+export type { EventCategory };
 
 export type EventFormValues = {
   title: string;
