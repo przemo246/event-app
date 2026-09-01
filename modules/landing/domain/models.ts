@@ -1,18 +1,11 @@
-import type { Brand } from "@/libs/type-beast/brand";
-
-export type CategoryValue = Brand<string, "CategoryValue">;
-
-export type CategoryOption = {
-  value: CategoryValue;
-  label: string;
-};
+import type { EventCategory } from "@/shared/event-category/domain/models";
 
 export type SearchFilters = {
   name: string;
   dateFrom: string | null;
   dateTo: string | null;
   location: string;
-  category: CategoryValue | null;
+  category: EventCategory | null;
 };
 
 export type PromotedEvent = {
@@ -20,5 +13,5 @@ export type PromotedEvent = {
   title: string;
   dateLabel: string;
   location: string;
-  category: CategoryValue;
+  category: EventCategory;
 };

@@ -1,4 +1,4 @@
-import type { CategoryValue, PromotedEvent } from "../domain/models";
+import type { PromotedEvent } from "../domain/models";
 
 export const MOCK_PROMOTED_EVENTS: PromotedEvent[] = [
   {
@@ -6,27 +6,27 @@ export const MOCK_PROMOTED_EVENTS: PromotedEvent[] = [
     title: "Letni Festiwal Muzyczny Open'er",
     dateLabel: "3-6 lipca 2026",
     location: "Gdynia",
-    category: "music-entertainment" as CategoryValue,
+    category: "music_entertainment",
   },
   {
     id: "2",
     title: "Konferencja Branży IT: Code Europe",
     dateLabel: "12 sierpnia 2026",
     location: "Warszawa",
-    category: "business-professional" as CategoryValue,
+    category: "business_professional",
   },
   {
     id: "3",
     title: "Festiwal Smaków Ulicznych",
     dateLabel: "20 lipca 2026",
     location: "Kraków",
-    category: "food-drink" as CategoryValue,
+    category: "food_drink",
   },
   {
     id: "4",
     title: "Bieg Uliczny Wrocław Night Run",
     dateLabel: "15 sierpnia 2026",
     location: "Wrocław",
-    category: "sports-wellness" as CategoryValue,
+    category: "sports_wellness",
   },
 ];

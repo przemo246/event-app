@@ -3,12 +3,12 @@ import { Briefcase, Dumbbell, Music2, Palette, UtensilsCrossed, Users } from "lu
 import { CATEGORY_OPTIONS, SEARCH_RESULTS_PATH } from "../configuration/constraints";
 
 const CATEGORY_ICONS: Record<string, typeof Music2> = {
-  "music-entertainment": Music2,
-  "business-professional": Briefcase,
-  "food-drink": UtensilsCrossed,
-  "sports-wellness": Dumbbell,
-  "arts-culture": Palette,
-  "community-hobbies": Users,
+  music_entertainment: Music2,
+  business_professional: Briefcase,
+  food_drink: UtensilsCrossed,
+  sports_wellness: Dumbbell,
+  arts_culture: Palette,
+  community_hobbies: Users,
 };
 
 export const CategoriesSection = () => {

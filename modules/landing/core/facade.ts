@@ -1,4 +1,4 @@
-import type { CategoryValue } from "../domain/models";
+import type { EventCategory } from "@/shared/event-category/domain/models";
 import type { Registry } from "./registry";
 import type { Store } from "./store";
 
@@ -9,7 +9,7 @@ export const createFacade = (store: Store, trigger: Registry["trigger"]) => {
       trigger("[TRIGGER]_SET_DATE_FROM", dateFrom),
     setDateTo: (dateTo: string | null) => trigger("[TRIGGER]_SET_DATE_TO", dateTo),
     setLocation: (location: string) => trigger("[TRIGGER]_SET_LOCATION", location),
-    setCategory: (category: CategoryValue | null) =>
+    setCategory: (category: EventCategory | null) =>
       trigger("[TRIGGER]_SET_CATEGORY", category),
     submit: () => trigger("[TRIGGER]_SUBMIT"),
     useName: () => store.$name.use(),
