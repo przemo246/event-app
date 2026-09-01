@@ -5,7 +5,9 @@ import { ThemeToggle } from "@/shared/nav-bar/presentation/theme-toggle";
 import { UserMenu, UserMenuFallback } from "@/shared/user-menu/presentation/user-menu";
 import { NavBarHeader } from "@/shared/nav-bar/presentation/nav-bar-header";
 
-const NAV_LINKS: { href: string; label: string }[] = [];
+const NAV_LINKS: { href: string; label: string }[] = [
+  { href: "/search", label: "Szukaj" },
+];
 
 export const NavBar = () => {
   return (
