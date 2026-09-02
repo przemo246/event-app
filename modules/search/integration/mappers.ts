@@ -1,5 +1,6 @@
 import { EVENT_CATEGORY_LABELS } from "@/shared/event-category/configuration/event-category-labels";
 import type { EventCategory } from "@/shared/event-category/domain/models";
+import { formatEventDateLabel } from "@/shared/event-card/configuration/format-event-date-label";
 import type { SearchEvent, SearchResults } from "../domain/models";
 
 type EventDto = {
@@ -36,23 +37,10 @@ export const mapSearchResultsDto = (dto: SearchResultsDto): SearchResults => ({
   nextCursor: dto.nextCursor,
 });
 
-const DATE_LABEL_FORMATTER = new Intl.DateTimeFormat("pl-PL", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-  hour: "2-digit",
-  minute: "2-digit",
-});
-
-const formatDateLabel = (dateTimeFrom: string, dateTimeTo: string | null): string => {
-  const from = DATE_LABEL_FORMATTER.format(new Date(dateTimeFrom));
-  if (!dateTimeTo) return from;
-  return `${from} – ${DATE_LABEL_FORMATTER.format(new Date(dateTimeTo))}`;
-};
-
 export const toEventCardProps = (event: SearchEvent) => ({
   title: event.title,
-  dateLabel: formatDateLabel(event.dateTimeFrom, event.dateTimeTo),
+  dateLabel: formatEventDateLabel(event.dateTimeFrom, event.dateTimeTo),
   location: event.location,
   categoryLabel: EVENT_CATEGORY_LABELS[event.category],
+  imageUrl: event.image,
 });

@@ -38,9 +38,16 @@ export const searchEvents = publicProcedure({
     const hasMore = events.length > PAGE_SIZE;
     const page = hasMore ? events.slice(0, PAGE_SIZE) : events;
 
+    const eventsWithImageUrls = page.map((event) => ({
+      ...event,
+      image: event.image
+        ? db.storage.from("event-images").getPublicUrl(event.image).data.publicUrl
+        : null,
+    }));
+
     return {
       code: 200 as const,
-      events: page,
+      events: eventsWithImageUrls,
       nextCursor: hasMore ? String(offset + PAGE_SIZE) : null,
     };
   },

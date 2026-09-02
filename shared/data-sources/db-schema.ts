@@ -43,6 +43,7 @@ export type Database = {
           description: string
           id: string
           image: string | null
+          is_featured: boolean
           link: string | null
           location: string
           tags: string[] | null
@@ -58,6 +59,7 @@ export type Database = {
           description: string
           id?: string
           image?: string | null
+          is_featured?: boolean
           link?: string | null
           location: string
           tags?: string[] | null
@@ -73,6 +75,7 @@ export type Database = {
           description?: string
           id?: string
           image?: string | null
+          is_featured?: boolean
           link?: string | null
           location?: string
           tags?: string[] | null

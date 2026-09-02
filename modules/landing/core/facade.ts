@@ -12,11 +12,14 @@ export const createFacade = (store: Store, trigger: Registry["trigger"]) => {
     setCategory: (category: EventCategory | null) =>
       trigger("[TRIGGER]_SET_CATEGORY", category),
     submit: () => trigger("[TRIGGER]_SUBMIT"),
+    loadPromotedEvents: () => trigger("[TRIGGER]_LOAD_PROMOTED_EVENTS"),
     useName: () => store.$name.use(),
     useDateFrom: () => store.$dateFrom.use(),
     useDateTo: () => store.$dateTo.use(),
     useLocation: () => store.$location.use(),
     useCategory: () => store.$category.use(),
     useDateRangeError: () => store.$dateRangeError.use(),
+    usePromotedEvents: () => store.$promotedEvents.use(),
+    useIsPromotedEventsLoading: () => store.$isPromotedEventsLoading.use(),
   };
 };

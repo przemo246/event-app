@@ -14,4 +14,5 @@ export type PromotedEvent = {
   dateLabel: string;
   location: string;
   category: EventCategory;
+  image: string | null;
 };

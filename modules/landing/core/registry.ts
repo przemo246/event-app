@@ -5,6 +5,7 @@ import { setDateTo } from "./handlers/set-date-to";
 import { setLocation } from "./handlers/set-location";
 import { setCategory } from "./handlers/set-category";
 import { submit } from "./handlers/submit";
+import { loadPromotedEvents } from "./handlers/load-promoted-events";
 import { createBus } from "./bus";
 
 export const createRegistry = (store: Store) => {
@@ -17,6 +18,7 @@ export const createRegistry = (store: Store) => {
     setLocation(store, bus),
     setCategory(store, bus),
     submit(store, bus),
+    loadPromotedEvents(store, bus),
   );
 
   return { trigger: bus.trigger, register };

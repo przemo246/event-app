@@ -7,4 +7,5 @@ export type Event =
   | TriggerEvent<"[TRIGGER]_SET_DATE_TO", string | null>
   | TriggerEvent<"[TRIGGER]_SET_LOCATION", string>
   | TriggerEvent<"[TRIGGER]_SET_CATEGORY", EventCategory | null>
-  | TriggerEvent<"[TRIGGER]_SUBMIT">;
+  | TriggerEvent<"[TRIGGER]_SUBMIT">
+  | TriggerEvent<"[TRIGGER]_LOAD_PROMOTED_EVENTS">;

@@ -1,10 +1,12 @@
 import { CalendarDays, MapPin, PartyPopper } from "lucide-react";
+import Image from "next/image";
 
 type EventCardProps = {
   title: string;
   dateLabel: string;
   location: string;
   categoryLabel: string;
+  imageUrl: string | null;
 };
 
 export const EventCard = ({
@@ -12,12 +14,25 @@ export const EventCard = ({
   dateLabel,
   location,
   categoryLabel,
+  imageUrl,
 }: EventCardProps) => {
   return (
-    <article className="overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
-      <div className="flex aspect-4/3 items-center justify-center bg-linear-to-br from-primary/10 to-accent/20">
-        <PartyPopper className="size-10 text-primary/40" />
-      </div>
+    <article className="cursor-pointer overflow-hidden rounded-lg border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
+      {imageUrl ? (
+        <div className="relative aspect-4/3 w-full">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      ) : (
+        <div className="flex aspect-4/3 items-center justify-center bg-linear-to-br from-primary/10 to-accent/20">
+          <PartyPopper className="size-10 text-primary/40" />
+        </div>
+      )}
       <div className="p-4">
         <span className="inline-flex rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
           {categoryLabel}
