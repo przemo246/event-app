@@ -67,7 +67,10 @@ export const DatePickerField = ({
           {errorMessage}
         </FieldError>
       ) : null}
-      <Popover className="rounded-md border border-border bg-card p-3 shadow-md">
+      <Popover
+        placement="bottom end"
+        className="rounded-md border border-border bg-card p-3 shadow-md"
+      >
         <Dialog>
           <Calendar className="text-sm">
             <header className="mb-2 flex items-center justify-between">
@@ -91,7 +94,7 @@ export const DatePickerField = ({
                 {(date) => (
                   <CalendarCell
                     date={date}
-                    className="cursor-pointer rounded p-1 text-center text-card-foreground data-selected:bg-primary data-selected:text-primary-foreground data-outside-month:text-muted-foreground"
+                    className="cursor-pointer rounded p-1 text-center text-card-foreground data-hovered:bg-muted data-selected:bg-primary data-selected:text-primary-foreground data-outside-month:text-muted-foreground"
                   />
                 )}
               </CalendarGridBody>
