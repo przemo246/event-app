@@ -15,6 +15,7 @@ import {
   Dialog,
   FieldError,
   Group,
+  Heading,
   Label,
   DatePicker as AriaDatePicker,
   Popover,
@@ -38,6 +39,7 @@ export const DatePickerField = ({
   return (
     <AriaDatePicker
       granularity="minute"
+      shouldForceLeadingZeros
       value={value ? parseDateTime(value) : null}
       onChange={(date) => onChange(date ? date.toString() : null)}
       isInvalid={Boolean(errorMessage)}
@@ -72,6 +74,7 @@ export const DatePickerField = ({
               <Button slot="previous" className="text-card-foreground">
                 ‹
               </Button>
+              <Heading className="text-sm font-medium capitalize text-card-foreground" />
               <Button slot="next" className="text-card-foreground">
                 ›
               </Button>
