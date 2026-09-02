@@ -22,7 +22,7 @@ This document defines the core domains in the Event App application.
 
 ---
 
-## 2. Favourite Events
+## 2. Favorite Events
 
 **Responsibility:** Favorite events management.
 

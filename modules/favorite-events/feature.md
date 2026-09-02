@@ -1,8 +1,8 @@
-# Favourite Events (Domain 2)
+# Favorite Events (Domain 2)
 
 ## Refs
 
-1. [DOMAINS.md - Favourite Events](../../documentation/DOMAINS.md#2-favourite-events)
+1. [DOMAINS.md - Favorite Events](../../documentation/DOMAINS.md#2-favorite-events)
 
 ## Dictionary
 

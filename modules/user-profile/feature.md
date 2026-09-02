@@ -15,10 +15,10 @@
 
 - [account_settings] context: `<auth:required>`, `<role:authenticated_user>`
 - [created_events_list] context: `<auth:required>`, `<role:authenticated_user>`
-- [created_events_list] sort_fields: `<field:name>`, `<field:event_date_time>` <!-- auto: mirrors sort options defined in Favourite Events/Event Search domains -->
+- [created_events_list] sort_fields: `<field:name>`, `<field:event_date_time>` <!-- auto: mirrors sort options defined in Favorite Events/Event Search domains -->
 - Password change: `<verification:current_password_required>` <!-- auto: standard security practice for changing a password -->
 - Account deletion action: `<confirmation:required>` <!-- auto: destructive, irreversible action -->
-- Created event deletion action: `<confirmation:required>` <!-- auto: destructive action; differs from Favourite Events removal which needs none -->
+- Created event deletion action: `<confirmation:required>` <!-- auto: destructive action; differs from Favorite Events removal which needs none -->
 
 ## DoD
 
@@ -56,6 +56,6 @@ An authenticated user can view their account settings (username, email, password
 ## Out of Scope
 
 - Creating a new event (handled by Event Creation domain)
-- Favorite events management (handled by Favourite Events domain)
+- Favorite events management (handled by Favorite Events domain)
 - Login, logout, session management, OAuth, and password reset via email (handled by Authentication domain)
 - Event details view content (handled by Event Details domain) <!-- auto -->
