@@ -15,7 +15,7 @@ export const LocationField = ({ value, onChange }: LocationFieldProps) => {
       label="Lokalizacja"
       value={value}
       onChange={onChange}
-      placeholder="Miasto lub region"
+      placeholder="Lokalizacja"
       icon={<MapPin className="size-4 shrink-0 text-muted-foreground" />}
     />
   );

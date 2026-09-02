@@ -9,10 +9,10 @@ export const SearchBar = () => {
 
   return (
     <TextField
-      label="Nazwa wydarzenia"
+      label="Nazwa"
       value={name}
       onChange={ctx.setName}
-      placeholder="Szukaj po nazwie wydarzenia..."
+      placeholder="Nazwa"
     />
   );
 };

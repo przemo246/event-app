@@ -10,10 +10,10 @@ type NameFieldProps = {
 export const NameField = ({ value, onChange }: NameFieldProps) => {
   return (
     <TextField
-      label="Nazwa wydarzenia"
+      label="Nazwa"
       value={value}
       onChange={onChange}
-      placeholder="Szukaj po nazwie wydarzenia..."
+      placeholder="Nazwa"
     />
   );
 };

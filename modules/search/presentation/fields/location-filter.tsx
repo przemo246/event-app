@@ -14,7 +14,7 @@ export const LocationFilter = () => {
       label="Lokalizacja"
       value={location}
       onChange={ctx.setLocation}
-      placeholder="Miasto lub region"
+      placeholder="Lokalizacja"
       icon={<MapPin className="size-4 shrink-0 text-muted-foreground" />}
     />
   );
